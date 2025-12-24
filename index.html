@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Interactive Survey</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="glass-card">
+  <h2>User Feedback Survey</h2>
+  <p class="subtitle">Your opinion helps us improve</p>
+
+  <form id="surveyForm">
+
+    <!-- Name -->
+    <div class="input-group">
+      <input type="text" id="name" required placeholder=" ">
+      <label>Your Name</label>
+    </div>
+
+    <div class="block">
+  <p class="question">How was your experience?</p>
+
+  <label>
+    <input type="radio" name="emoji" value="😡" required>
+    😡
+  </label>
+
+  <label>
+    <input type="radio" name="emoji" value="😐">
+    😐
+  </label>
+
+  <label>
+    <input type="radio" name="emoji" value="🙂">
+    🙂
+  </label>
+
+  <label>
+    <input type="radio" name="emoji" value="😍">
+    😍
+  </label>
+</div>
+
+
+
+    <!-- Rating (STATIC label above box) -->
+    <div class="input-group">
+      <label class="static-label">Rate our service</label>
+      <select id="rating" required>
+        <option value="" disabled selected>Select rating</option>
+        <option>Excellent</option>
+        <option>Good</option>
+        <option>Average</option>
+        <option>Poor</option>
+      </select>
+    </div>
+
+    <!-- Feedback -->
+    <div class="input-group">
+      <textarea id="feedback" rows="3" required placeholder=" "></textarea>
+      <label>Your Feedback</label>
+    </div>
+
+    <button type="submit" class="btn primary">Submit Survey</button>
+  
+   
+
+  </form>
+</div>
+<form id="surveyForm">
+  <!-- all your survey inputs here -->
+
+</form>
+
+<!-- ✅ ADD THIS BELOW THE FORM -->
+<div id="thankYouScreen" class="thank-you hidden">
+  <h2>🎉 Thank You!</h2>
+  <p>Your feedback has been recorded.</p>
+
+  <button class="btn secondary" onclick="backToSurvey()">
+    Back to Survey
+  </button>
+</div>
+
+<script src="script.js"></script>
+<!-- Confetti Container -->
+<div id="confetti-container"></div>
+</body>
+</html>

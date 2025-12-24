@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- 🔐 LOGIN SCREEN -->
+<div class="glass-card" id="loginBox">
+  <h2>🔐 Admin Login</h2>
+  <p class="subtitle">Authorized access only</p>
+
+  <div class="input-group">
+    <input type="password" id="adminPassword" placeholder=" ">
+    <label>Admin Password</label>
+  </div>
+
+  <button class="btn primary" onclick="loginAdmin()">Login</button>
+  <p id="loginError" style="color:#ffdddd; text-align:center;"></p>
+</div>
+
+<!-- 📊 ADMIN DASHBOARD -->
+<div class="glass-card hidden" id="adminDashboard">
+  <h2>📊 Admin Dashboard</h2>
+  <p class="subtitle">Survey Responses</p>
+
+  <div id="emojiStats" class="stats"></div>
+
+  <button class="btn primary" onclick="renderTable()">👁 View Responses</button>
+  <button class="btn secondary" onclick="downloadJSON()">📥 Download JSON</button>
+  <button class="btn secondary" onclick="logoutAdmin()">🚪 Logout</button>
+
+  <div class="table-wrapper">
+    <table id="responseTable">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Emoji</th>
+          <th>Rating</th>
+          <th>Feedback</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

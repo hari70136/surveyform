@@ -1,0 +1,239 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Glass Card */
+.glass-card {
+  width: 90%;
+  max-width: 420px;
+  padding: 30px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  color: #f0f2f0;
+}
+
+/* Headings */
+.glass-card h2 {
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.85;
+  margin-bottom: 25px;
+}
+
+/* Input Group */
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: rgba(255,255,255,0.25);
+  color: #191919;
+  font-size: 14px;
+}
+
+/* Floating labels ONLY for input & textarea */
+.input-group input + label,
+.input-group textarea + label {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 13px;
+  color: rgba(12, 3, 3, 0.8);
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+
+.input-group input:focus + label,
+.input-group textarea:focus + label,
+.input-group input:not(:placeholder-shown) + label,
+.input-group textarea:not(:placeholder-shown) + label {
+  top: -8px;
+  font-size: 11px;
+  color: #171616;
+}
+
+/* Buttons */
+.btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.primary {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: white;
+}
+
+.secondary {
+  background: rgba(255,255,255,0.25);
+  color: rgb(24, 23, 23);
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+.btn:active {
+  transform: scale(0.98);
+}
+.static-label {
+  display: block;
+  margin-bottom: 8px;   /* space BETWEEN label & box */
+  font-size: 15px;
+  color: rgba(11, 11, 11, 0.9);
+  position: static;
+}
+
+/* ===== SELECT FIX (NO FLOATING, NO OVERLAP) ===== */
+
+.select-group {
+  position: static;
+}
+
+.select-group label {
+  position: static;
+  transform: none;
+  margin-bottom: 6px;
+  display: block;
+  font-size: 13px;
+  color: rgba(250, 241, 241, 0.9);
+}
+
+.select-group select {
+  background: rgba(255,255,255,0.25);
+  color: #191919;
+}
+/* ===== AUTO THANK YOU SCREEN ===== */
+
+.hidden {
+  display: none;
+}
+
+.thank-you {
+  text-align: center;
+  padding: 40px 20px;
+  animation: fadeIn 0.8s ease;
+}
+
+.thank-you h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.thank-you p {
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+.thank-you span {
+  display: block;
+  margin-top: 15px;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* 🎊 Confetti */
+#confetti-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  opacity: 0.9;
+  animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(-10vh) rotate(0deg);
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+/* ===== ADMIN TABLE ===== */
+
+.table-wrapper {
+  margin-top: 20px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  background: rgba(255,255,255,0.2);
+}
+
+th, td {
+  padding: 8px;
+  text-align: center;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+th {
+  background: rgba(255,255,255,0.35);
+  font-weight: bold;
+}
+
+.stats {
+  margin-bottom: 15px;
+  padding: 10px;
+  background: rgba(255,255,255,0.25);
+  border-radius: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+.stats p {
+  margin: 5px 0;
+}
